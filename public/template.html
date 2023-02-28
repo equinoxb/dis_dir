@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Directory {directory}</title>
+    <style> {style} </style>
+    <script defer src="script.js"></script>
+  </head>
+  <body class="directory">
+    <div id="uploadFiles" hidden>
+      <h3>Upload file:</h3>
+      <form id="form" enctype="multipart/form-data" method="post">
+        <input type="file" name="file1" id="file1" onchange="uploadReq()"><br>
+        
+
+        <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+        <h3 id="status"></h3>
+        <p id="loaded_n_total"></p>
+      </form>
+
+      
+    </div>
+
+    <hr>
+
+    <div id="wrapper">
+      {files} 
+    </div> 
+  </body>
+</html>
