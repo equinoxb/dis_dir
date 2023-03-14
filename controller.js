@@ -11,11 +11,11 @@ class Controller {
             try {
                 log.info(`Route: ${req.url} Method: ${req.method}`);
                 Service.deleteFile(req.body);
-                return res.status(200).send();
+                return res.sendStatus(200);
                 }
             catch(e) {
                 log.info(`Route: ${req.url} Method: ${req.method} StatusCode: 500`);
-                res.status(500).send();
+                res.sendStatus(500);
             }
         }
     }
@@ -27,7 +27,7 @@ class Controller {
                 try {
                     log.info(`Route: ${req.url} Method: ${req.method}`);
                     Service.uploadFiles(req.files);
-                    res.status(200).send();
+                    res.sendStatus(200);
                 } catch(e){
                     log.info(`Route: ${req.url} Method: ${req.method} StatusCode: 500`);
                     res.status(500).json(e.message);
@@ -82,7 +82,6 @@ class Controller {
         res.json(result);  
     }
 
-    ////// COnfig to front
     getConfig(req, res) {
         try {
             log.info(`Route: ${req.url} Method: ${req.method}`);
