@@ -44,14 +44,14 @@ app.use(fileUpload());
 
 app.use(router);
 
-app.use('/test', express.static(path.join(__dirname, 'public')), serveIndex(path.join(config.directory), { 
+app.use('/', express.static(path.join(__dirname, 'public')), serveIndex(path.join(config.directory), { 
     icons: true, 
     stylesheet: path.join(__dirname, 'public/styles.css'),
     template: path.join(__dirname, 'public/template.html')
 }));
 
 if (config.enableDownload) {
-    app.use('/test', serveStatic(path.resolve(config.directory)));
+    app.use('/', serveStatic(path.resolve(config.directory)));
 }
 
 app.listen(PORT, () => {

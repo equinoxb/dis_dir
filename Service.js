@@ -9,7 +9,8 @@ class Service {
 
     ///////// DELETE FILE BUTTON
     deleteFile (file) { 
-        let filePath = path.resolve(config.directory, Object.keys(file)[0].split('/').slice(4).join('/'));
+        let filePath = path.resolve(config.directory, Object.keys(file)[0].split('/').slice(3).join('/'));
+        console.log(filePath)
         let fileExists = fs.existsSync(filePath);
         if (fileExists) {
             fs.unlinkSync(filePath);
@@ -43,6 +44,7 @@ class Service {
     
     ////////////////// DOWNLOAD FILE FROM LINK
     downloadFile (file) {
+        
         let filePath = path.resolve(config.directory, file)
         let fileExists = fs.existsSync(filePath)
 

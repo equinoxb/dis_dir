@@ -1,6 +1,6 @@
 {
-    "directory": "",
-    "port": "8080",
+    "directory": "C:/Users/dandreev/Desktop",
+    "port": "8082",
     "enableUpload": true,
     "enableDownload": true,
     "enableDelete": true,
