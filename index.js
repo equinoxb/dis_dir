@@ -40,7 +40,13 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.use(fileUpload());
+app.use(fileUpload(
+    {
+        useTempFiles : true,
+        tempFileDir : `${config.tmpPath}`       
+    }
+));
+
 
 app.use(router);
 
